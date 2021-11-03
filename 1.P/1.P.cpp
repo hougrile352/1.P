@@ -48,6 +48,18 @@ int main()
 
     cout << "\n\nIt takes " << hours << " hours to paint the " << roomname << " room"; //print hours
     cout << "\nIt costs $" << costperhourWT << " to hire someone to paint the room."; //print cost per hour with tax
+
+    double total = costwithtax + costperhourWT; //Calculate grand total
+
+    cout << "\n\nYour receipt:"; //Receipt printing
+    cout << "\n\nMaterial cost without tax: " << costwithouttax;
+    cout << "\nMaterial tax: " << tax;
+    cout << "\nMaterial total cost: " << costwithtax;
+    cout << "\n\nTotal hours spent working: " << hours;
+    cout << "\nWage cost without tax: " << costperhourNT;
+    cout << "\nWage taxes:" << cphtax;
+    cout << "\nWage total cost: " << costperhourWT;
+    cout << "\n\nGRAND TOTAL: " << total;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
