@@ -2,30 +2,52 @@
 //
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
+const double taxpercent = 0.13; //tax percentage constant
+
 int perimeterCalc(int leng, int wid)
 {
-    return (leng * wid * 2);
+    return (leng * wid * 2); //calculates the perimeter. length times width times 2
 }
 
 int main()
 {
-    int enteredlength; int enteredwidth;
-    cout << "Enter length in meters:\n";
+    int enteredlength; int enteredwidth; //Initialize variables
+    string roomname;
+
+    cout << "Enter room name:\n"; //get room name
+    getline(cin, roomname);
+    
+    cout << "Enter length in meters:\n"; //get length
     cin >> enteredlength;
 
-    cout << "Enter width in meters:\n";
+    cout << "Enter width in meters:\n"; //get width
     cin >> enteredwidth;
 
-    int perimeter = perimeterCalc(enteredlength, enteredwidth);
-    cout << "The perimeter is: ";
-    cout << perimeter;
+    int perimeter = perimeterCalc(enteredlength, enteredwidth); //Run the perimeter calculation function
+    cout << "The perimeter is: " << perimeter; //Prints the perimeter.
 
-    int area = perimeter / 2;
-    cout << "\nThe area is: ";
-    cout << area;
+    int area = perimeter / 2; //calculate area
+    cout << "\nThe area is: " << area; //Prints the area.
+
+    double costwithouttax = area * 3.39;  //Calculate cost without tax
+    double tax = costwithouttax * taxpercent; //Calculate tax
+    double costwithtax = costwithouttax + tax; //Calculate cost with tax
+
+    cout << "\nCost without tax is: " << costwithouttax; //Prints the cost without tax
+
+    cout << "\nCost with tax is: " << costwithtax; //Prints the cost with tax
+
+    int hours = area / 5; //Calculates the hours
+    double costperhourNT = hours * 22.50; //Cost per hour without tax
+    double cphtax = costperhourNT * taxpercent; //tax calculation 2
+    double costperhourWT = costperhourNT + cphtax; //Cost per hour with tax
+
+    cout << "\n\nIt takes " << hours << " hours to paint the " << roomname << " room"; //print hours
+    cout << "\nIt costs $" << costperhourWT << " to hire someone to paint the room."; //print cost per hour with tax
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
