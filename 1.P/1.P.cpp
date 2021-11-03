@@ -2,27 +2,30 @@
 //
 
 #include <iostream>
-#include <string>
-#include <cmath>
 
 using namespace std;
 
-int perimeterCalculation(int length, int width)
+int perimeterCalc(int leng, int wid)
 {
-    return length * width * 2;
+    return (leng * wid * 2);
 }
 
 int main()
 {
     int enteredlength; int enteredwidth;
-
-    cout << "Enter room length:\n";
+    cout << "Enter length in meters:\n";
     cin >> enteredlength;
 
-    cout << "Enter room width:\n";
+    cout << "Enter width in meters:\n";
     cin >> enteredwidth;
 
-    cout << "The perimeter is: " + perimeterCalculation(enteredlength, enteredwidth);
+    int perimeter = perimeterCalc(enteredlength, enteredwidth);
+    cout << "The perimeter is: ";
+    cout << perimeter;
+
+    int area = perimeter / 2;
+    cout << "\nThe area is: ";
+    cout << area;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
